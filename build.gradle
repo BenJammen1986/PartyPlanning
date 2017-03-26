@@ -5,6 +5,10 @@ archivesBaseName = "PartyPlanning"
 version = '1.0'
 mainClassName = "App"
 
+run{
+  standardInput = System.in
+}
+
 repositories {
  mavenCentral()
 }
