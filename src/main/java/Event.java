@@ -79,6 +79,19 @@ public class Event {
         // do nothing
     }
 
+    //calculate entertainment
+    if ( mEntertainment.equalsIgnoreCase("personal")) {
+      totalPrice += 100;
+    } else if ( mEntertainment.equalsIgnoreCase("DJ")) {
+      totalPrice += 250;
+    } else if ( mEntertainment.equalsIgnoreCase("live band")) {
+      totalPrice += 500;
+    } else if ( mEntertainment.equalsIgnoreCase("none")) {
+      // do nothing
+    }
+
+
+
 
 
     return totalPrice.toString();
