@@ -44,13 +44,26 @@ public class Event {
   public String calculatePrice() {
     Integer totalPrice = 0;
 
+    //calculate base price for package
+    if ( mGuests >= 150 ) {
+      totalPrice += 1200;
+    } else if ( (mGuests >= 100) && (mGuests< 150) ) {
+      totalPrice += 1100;
+    } else if ( (mGuests >= 75) && (mGuests< 100) ) {
+      totalPrice += 1000;
+    } else if ( (mGuests >= 50) && (mGuests< 75) ) {
+      totalPrice += 800;
+    } else if ( mGuests < 50) {
+      totalPrice += 600;
+    }
+
     //calculate meal
     if ( mMeal.equalsIgnoreCase("light snacks")) {
-      totalPrice += (2 * getGuests());
+      totalPrice += (1 * getGuests());
     } else if ( mMeal.equalsIgnoreCase("Steak and Potatoes")) {
-      totalPrice += (4 * getGuests());
+      totalPrice += (3 * getGuests());
     } else if ( mMeal.equalsIgnoreCase("Seafood Platter")) {
-      totalPrice += (5 * getGuests());
+      totalPrice += (4 * getGuests());
     } else if ( mMeal.equalsIgnoreCase("none")) {
         // do nothing
     }
