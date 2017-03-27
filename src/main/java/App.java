@@ -10,6 +10,7 @@ public class App {
     String userMeal;
     String userDrinks;
     String userEntertainment;
+    String userCoupon;
 
     Scanner scanIn = new Scanner(System.in);
 
@@ -32,9 +33,11 @@ public class App {
     userEntertainment = scanIn.nextLine();
 
     System.out.println("If you have a coupon code (ONE) you may enter it here: ");
-    String coupon = scanIn.nextLine();
+    userCoupon = scanIn.nextLine();
 
-    Event userEvent = new Event(userEventName, userGuests, userMeal, userDrinks, userEntertainment, coupon);
+
+
+    Event userEvent = new Event(userEventName, userGuests, userMeal, userDrinks, userEntertainment, userCoupon);
 
     System.out.println("Your total price will be: $" + userEvent.calculatePrice());
 

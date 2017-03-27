@@ -55,8 +55,9 @@ public class Event {
       totalPrice += 800;
     } else if ( mGuests < 50) {
       totalPrice += 600;
+    }  else {
+      System.out.println("Sorry- we didn't recognize your guest selection. To get an accurate price, please re-enter with a correct # of guests.");
     }
-
     //calculate meal
     if ( mMeal.equalsIgnoreCase("light snacks")) {
       totalPrice += (3 * getGuests());
@@ -66,6 +67,8 @@ public class Event {
       totalPrice += (8 * getGuests());
     } else if ( mMeal.equalsIgnoreCase("none")) {
         // do nothing
+    } else {
+      System.out.println("Sorry- we didn't recognize your meal selection. To get an accurate price, please reenter your information with an item from our selection list.");
     }
 
     //calculate drinks
@@ -77,10 +80,14 @@ public class Event {
       totalPrice += (10 * getGuests());
     } else if ( mDrinks.equalsIgnoreCase("none")) {
         // do nothing
+    } else {
+      System.out.println("Sorry- we didn't recognize your drinks selection. To get an accurate price, please reenter your information with an item from our selection list.");
     }
 
     //calculate entertainment
-    if ( mEntertainment.equalsIgnoreCase("personal")) {
+    if ( (mCoupon.equalsIgnoreCase("freeDJ1234")) && (mEntertainment.equalsIgnoreCase("DJ"))) {
+      System.out.println("Cool! We'll include your DJ services for free. Enjoy!");
+    } else if ( mEntertainment.equalsIgnoreCase("personal")) {
       totalPrice += 100;
     } else if ( mEntertainment.equalsIgnoreCase("DJ")) {
       totalPrice += 250;
@@ -88,9 +95,16 @@ public class Event {
       totalPrice += 500;
     } else if ( mEntertainment.equalsIgnoreCase("none")) {
       // do nothing
+    } else {
+      System.out.println("Sorry- we didn't recognize your entertainment selection. To get an accurate price, please reenter your information with an item from our selection list.");
     }
-
-
+    //calculate coupon
+    // if ( mCoupon.equalsIgnoreCase("freeDJ1234")) {
+    //   totalPrice -= 250;
+    //   System.out.println("Congrats! Your DJ services will be free!");
+    // } else if ( mCoupon.equalsIgnoreCase("freeDrinks2468")) {
+    //   totalPrice -=
+    // }
 
 
 
