@@ -31,10 +31,14 @@ public class App {
     System.out.println("Please select one of the options for entertainment: none, personal, DJ, live band");
     userEntertainment = scanIn.nextLine();
 
-    // getGuests();
-    // getMeal();
-    // getDrinks();
-    // getEntertainment();
+    System.out.println("If you have a coupon code (ONE) you may enter it here: ");
+    String coupon = scanIn.nextLine();
+
+    Event userEvent = new Event(userEventName, userGuests, userMeal, userDrinks, userEntertainment, coupon);
+
+    System.out.println("Your total price will be: " + userEvent.calculatePrice());
+
+
   }
 }
 

@@ -5,13 +5,16 @@ public class Event {
   private Integer mGuests;
   private String mMeal;
   private String mDrinks;
+  private String mEntertainment;
+  private String mCoupon;
 
-
-    public Event(String name, Integer guests, String meal, String drinks) {
+    public Event(String name, Integer guests, String meal, String drinks, String entertainment, String coupon) {
       mName = name;
       mGuests = guests;
       mMeal = meal;
       mDrinks = drinks;
+      mEntertainment = entertainment;
+      mCoupon = coupon;
     }
 
   public String getName() {
@@ -30,7 +33,36 @@ public class Event {
     return mDrinks;
   }
 
-  public String calculatePrice() {
+  public String getEntertainment() {
+    return mEntertainment;
+  }
 
+  public String getCoupon() {
+    return mCoupon;
+  }
+
+  public String calculatePrice() {
+    Integer totalPrice = 0;
+
+    //calculate meal
+    if ( mMeal.equalsIgnoreCase("light snacks")) {
+      totalPrice += (2 * getGuests());
+    } else if ( mMeal.equalsIgnoreCase("Steak and Potatoes")) {
+      totalPrice += (4 * getGuests());
+    } else if ( mMeal.equalsIgnoreCase("Seafood Platter")) {
+      totalPrice += (5 * getGuests());
+    } else if ( mMeal.equalsIgnoreCase("none")) {
+        // do nothing
+    }
+
+
+
+    return totalPrice.toString();
+
+    // 100-150
+    // 75-100
+    // 50-75
+    // 25-50
+    // under 25
   }
 }
