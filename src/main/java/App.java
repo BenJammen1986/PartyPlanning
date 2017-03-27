@@ -25,7 +25,7 @@ public class App {
     System.out.println("Please select one of the options for a meal: none, light snacks, Steak and Potatoes, Seafood Platter");
     userMeal = scanIn.nextLine();
 
-    System.out.println("Please select one of the options for drinks: none, sodas, full bar: ");
+    System.out.println("Please select one of the options for drinks: 'none', 'sodas' (i.e.non-alcoholic), 'limited bar', or 'full bar': ");
     userDrinks = scanIn.nextLine();
 
     System.out.println("Please select one of the options for entertainment: none, personal, DJ, live band");
@@ -36,7 +36,7 @@ public class App {
 
     Event userEvent = new Event(userEventName, userGuests, userMeal, userDrinks, userEntertainment, coupon);
 
-    System.out.println("Your total price will be: " + userEvent.calculatePrice());
+    System.out.println("Your total price will be: $" + userEvent.calculatePrice());
 
 
   }

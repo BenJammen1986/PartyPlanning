@@ -59,12 +59,23 @@ public class Event {
 
     //calculate meal
     if ( mMeal.equalsIgnoreCase("light snacks")) {
-      totalPrice += (1 * getGuests());
-    } else if ( mMeal.equalsIgnoreCase("Steak and Potatoes")) {
       totalPrice += (3 * getGuests());
+    } else if ( mMeal.equalsIgnoreCase("Steak and Potatoes")) {
+      totalPrice += (6 * getGuests());
     } else if ( mMeal.equalsIgnoreCase("Seafood Platter")) {
-      totalPrice += (4 * getGuests());
+      totalPrice += (8 * getGuests());
     } else if ( mMeal.equalsIgnoreCase("none")) {
+        // do nothing
+    }
+
+    //calculate drinks
+    if ( mDrinks.equalsIgnoreCase("sodas")) {
+      totalPrice += (2 * getGuests());
+    } else if ( mDrinks.equalsIgnoreCase("limited bar")) {
+      totalPrice += (4 * getGuests());
+    } else if ( mDrinks.equalsIgnoreCase("full bar")) {
+      totalPrice += (10 * getGuests());
+    } else if ( mDrinks.equalsIgnoreCase("none")) {
         // do nothing
     }
 
